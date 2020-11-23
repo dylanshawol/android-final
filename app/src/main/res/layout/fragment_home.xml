@@ -2,21 +2,145 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".nav_drawer_fragments.HomeFragment">
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/appNameTitleTextView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/title_top_margin"-->
+    <!--        android:layout_marginBottom="@dimen/title_bottom_margin"-->
+    <!--        android:fontFamily="@font/delius_swash_caps"-->
+    <!--        android:text="@string/app_name"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:textSize="@dimen/title_text_size" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/recipesButton"-->
+    <!--        android:layout_width="@dimen/button_width"-->
+    <!--        android:layout_height="@dimen/button_height"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginBottom="@dimen/button_bottom_margin"-->
+    <!--        android:fontFamily="@font/actor"-->
+    <!--        android:text="@string/button_recipes"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:textSize="@dimen/button_text_size"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:cornerRadius="@dimen/button_corner_radius" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/converterButton"-->
+    <!--        android:layout_width="@dimen/button_width"-->
+    <!--        android:layout_height="@dimen/button_height"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginBottom="@dimen/button_bottom_margin"-->
+    <!--        android:fontFamily="@font/actor"-->
+    <!--        android:text="@string/button_converter"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:textSize="@dimen/button_text_size"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:cornerRadius="@dimen/button_corner_radius" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/tipsButton"-->
+    <!--        android:layout_width="@dimen/button_width"-->
+    <!--        android:layout_height="@dimen/button_height"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:fontFamily="@font/actor"-->
+    <!--        android:text="@string/button_tips"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:textSize="@dimen/button_text_size"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:cornerRadius="@dimen/button_corner_radius" />-->
 
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/appNameTitleTextViewBlack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="@dimen/title_top_margin"
+        android:layout_marginBottom="@dimen/title_bottom_margin"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="@string/app_name"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recipeButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/appNameTitleTextViewWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="@dimen/title_top_margin"
+        android:layout_marginBottom="2dp"
+        android:elevation="@dimen/title_white_elevation"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/appNameTitleTextViewBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/recipeButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="@dimen/button_bottom_margin"
+        android:fontFamily="@font/actor"
+        android:text="@string/button_recipes"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:layout_constraintBottom_toTopOf="@+id/converterButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appNameTitleTextViewBlack" />
+
+    <Button
+        android:id="@+id/converterButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="@dimen/button_bottom_margin"
+        android:fontFamily="@font/actor"
+        android:text="@string/button_converter"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:layout_constraintBottom_toTopOf="@+id/tipsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeButton" />
+
+    <Button
+        android:id="@+id/tipsButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/button_bottom_margin"
+        android:fontFamily="@font/actor"
+        android:text="@string/button_tips"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/converterButton" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,38 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+
+    <!--    Global Button Dimens    -->
+    <dimen name="button_width">350dp</dimen>
+    <dimen name="button_height">70dp</dimen>
+    <dimen name="button_bottom_margin">25dp</dimen>
+    <dimen name="button_corner_radius">50dp</dimen>
+    <dimen name="button_text_size">20sp</dimen>
+
+    <!--    Global Title Dimens    -->
+    <dimen name="title_top_margin">70dp</dimen>
+    <dimen name="title_bottom_margin">75dp</dimen>
+    <dimen name="title_text_size">62sp</dimen>
+    <dimen name="title_white_elevation">2dp</dimen>
+
+    <!--    Contact Icon Dimens    -->
+    <dimen name="icon_size">50dp</dimen>
+    <dimen name="icon_start_margin">20dp</dimen>
+    <dimen name="icon_elevation">10dp</dimen>
+
+    <!--    Recipe RecyclerView Image Dimens    -->
+    <dimen name="recycler_image_width">150dp</dimen>
+    <dimen name="recycler_image_height">100dp</dimen>
+    <!--    Recipe RecyclerView Text Dimens    -->
+    <dimen name="recycler_recipe_name_text_size">24sp</dimen>
+    <dimen name="recycler_recipe_time_text_size">20sp</dimen>
+    <!--    Recipe RecyclerView Text Margin Dimens    -->
+    <dimen name="recycler_recipe_name_top_margin">20dp</dimen>
+    <dimen name="recycler_recipe_name_left_margin">20dp</dimen>
+    <dimen name="recycler_recipe_time_top_margin">5dp</dimen>
+    <dimen name="recycler_recipe_time_left_margin">20dp</dimen>
+
+
+
 </resources>

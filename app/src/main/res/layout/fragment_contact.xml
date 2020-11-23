@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".nav_drawer_fragments.ContactFragment">
+
+    <TextView
+        android:id="@+id/contactTitleTextViewBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/title_top_margin"
+        android:layout_marginBottom="@dimen/title_bottom_margin"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="@string/contact_title"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/phoneButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/contactTitleTextViewWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="@dimen/title_top_margin"
+        android:layout_marginBottom="2dp"
+        android:elevation="@dimen/title_white_elevation"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="@string/contact_title"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/contactTitleTextViewBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/phoneButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="@dimen/button_bottom_margin"
+        android:fontFamily="@font/actor"
+        android:text="@string/contact_call_us"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:layout_constraintBottom_toTopOf="@+id/smsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactTitleTextViewBlack" />
+
+    <ImageView
+        android:id="@+id/phoneIconImage"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/icon_start_margin"
+        android:elevation="@dimen/icon_elevation"
+        android:src="@drawable/phone_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/phoneButton"
+        app:layout_constraintStart_toStartOf="@+id/phoneButton"
+        app:layout_constraintTop_toTopOf="@+id/phoneButton" />
+
+    <Button
+        android:id="@+id/smsButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="@dimen/button_bottom_margin"
+        android:fontFamily="@font/actor"
+        android:text="@string/contact_text_us"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:layout_constraintBottom_toTopOf="@+id/emailButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneButton" />
+
+
+    <ImageView
+        android:id="@+id/smsIconImage"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/icon_start_margin"
+        android:elevation="@dimen/icon_elevation"
+        android:src="@drawable/sms_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/smsButton"
+        app:layout_constraintStart_toStartOf="@+id/smsButton"
+        app:layout_constraintTop_toTopOf="@+id/smsButton" />
+
+
+    <Button
+        android:id="@+id/emailButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:fontFamily="@font/actor"
+        android:text="@string/contact_email_us"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:layout_constraintBottom_toTopOf="@+id/visitButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smsButton" />
+
+
+    <ImageView
+        android:id="@+id/emailIconImage"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/icon_start_margin"
+        android:elevation="@dimen/icon_elevation"
+        android:src="@drawable/email_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/emailButton"
+        app:layout_constraintStart_toStartOf="@+id/emailButton"
+        app:layout_constraintTop_toTopOf="@+id/emailButton" />
+
+    <Button
+        android:id="@+id/visitButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/button_bottom_margin"
+        android:fontFamily="@font/actor"
+        android:text="@string/contact_visit_us"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailButton" />
+
+    <ImageView
+        android:id="@+id/visitIconImage"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/icon_start_margin"
+        android:elevation="@dimen/icon_elevation"
+        android:src="@drawable/location_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/visitButton"
+        app:layout_constraintStart_toStartOf="@+id/visitButton"
+        app:layout_constraintTop_toTopOf="@+id/visitButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

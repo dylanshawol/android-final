@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Chef101</string>
+    <string name="app_name">Chef 101</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -7,7 +7,25 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!--    Menu Headers-->
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_contact">Contact</string>
+
+    <!--    Titles    -->
+    <string name="contact_title">Contact Us</string>
+    <string name="recipes_title">Recipes</string>
+    <string name="converter_title">Converter</string>
+    <string name="tips_title">Tips &amp; Tricks</string>
+
+    <!--    Home Button Text    -->
+    <string name="button_recipes">Recipes</string>
+    <string name="button_converter">Converter</string>
+    <string name="button_tips">Tips &amp; Tricks</string>
+
+    <!--    Contact Button Text    -->
+    <string name="contact_call_us">Call Us</string>
+    <string name="contact_text_us">Text Us</string>
+    <string name="contact_email_us">Email Us</string>
+    <string name="contact_visit_us">Visit Us</string>
+
 </resources>
