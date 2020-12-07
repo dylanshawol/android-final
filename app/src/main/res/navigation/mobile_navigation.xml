@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_recipes_fragment"
-            app:destination="@id/recipes_fragment" />
+            app:destination="@id/recipe_list_fragment" />
         <action
             android:id="@+id/action_nav_home_to_tips_fragment"
             app:destination="@id/tips_fragment" />
@@ -28,9 +28,13 @@
         tools:layout="@layout/fragment_contact" />
 
     <fragment
-        android:id="@+id/recipes_fragment"
-        android:name="com.example.chef101.fragments.RecipesFragment"
-        tools:layout="@layout/fragment_recipes" />
+        android:id="@+id/recipe_list_fragment"
+        android:name="com.example.chef101.fragments.RecipeListFragment"
+        tools:layout="@layout/fragment_recipe_list" >
+        <action
+            android:id="@+id/action_recipe_list_fragment_to_recipe_fragment"
+            app:destination="@id/recipe_fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/converter_fragment"
@@ -41,5 +45,27 @@
         android:id="@+id/tips_fragment"
         android:name="com.example.chef101.fragments.TipsFragment"
         tools:layout="@layout/fragment_tips" />
+    <fragment
+        android:id="@+id/recipe_fragment"
+        android:name="com.example.chef101.fragments.RecipeFragment"
+        android:label="fragment_recipe"
+        tools:layout="@layout/fragment_recipe" >
+        <action
+            android:id="@+id/action_recipe_fragment_to_ingredients_fragment"
+            app:destination="@id/ingredients_fragment" />
+        <action
+            android:id="@+id/action_recipe_fragment_to_instructions_fragment"
+            app:destination="@id/instructions_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingredients_fragment"
+        android:name="com.example.chef101.fragments.recycler_fragments.IngredientsFragment"
+        android:label="fragment_ingredients"
+        tools:layout="@layout/fragment_ingredients" />
+    <fragment
+        android:id="@+id/instructions_fragment"
+        android:name="com.example.chef101.fragments.recycler_fragments.InstructionsFragment"
+        android:label="fragment_instructions"
+        tools:layout="@layout/fragment_instructions" />
 
 </navigation>

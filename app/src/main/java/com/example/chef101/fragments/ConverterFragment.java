@@ -4,11 +4,19 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.example.chef101.R;
+import com.example.chef101.UnitConverter.Conversions;
+import com.example.chef101.UnitConverter.UnitConverter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,10 +65,90 @@ public class ConverterFragment extends Fragment {
         }
     }
 
+    // TODO: Create better variable names lol
+    public int unitPosition1;
+    public int unitPosition2;
+    public double amount;
+    public EditText decimalField1;
+    public EditText decimalField2;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_converter, container, false);
+        View view = inflater.inflate(R.layout.fragment_converter, container, false);
+
+/*------------------------------ Unit 1 ------------------------------*/
+        Spinner unitSpinner1 = view.findViewById(R.id.unitSpinner1);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(), R.array.mass_units, android.R.layout.simple_spinner_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        unitSpinner1.setAdapter(adapter1);
+
+        decimalField1 = view.findViewById(R.id.unitTextField1);
+        decimalField2 = view.findViewById(R.id.unitTextField2);
+
+        decimalField1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {convertOnTextChanged();}
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+
+        unitSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                unitPosition1 = position;
+                convertOnItemSelected();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+/*------------------------------ Unit 2 ------------------------------*/
+        Spinner unitSpinner2 = view.findViewById(R.id.unitSpinner2);
+        unitSpinner2.setAdapter(adapter1);
+
+        unitSpinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                unitPosition2 = position;
+                convertOnItemSelected();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+        return view;
+    }
+
+    /**
+     * Checks to see if the first input field is empty
+     * If it contains a decimal then it calls the convert
+     * method from the UnitConverter class and assigns its
+     * value to the second input field.
+     *
+     * @author Dylan Shawol
+     */
+    public void convertOnItemSelected() {
+        if (!decimalField1.getText().toString().equals("")) {
+            amount = Double.parseDouble(decimalField1.getText().toString());
+            decimalField2.setText(String.valueOf(UnitConverter.unitConversion(amount, unitPosition1, unitPosition2)));
+        }
+    }
+
+    /**
+     * Assign the converted value from the first input field
+     * into the second input field.
+     *
+     * @author Dylan Shawol
+     */
+    public void convertOnTextChanged() {
+        amount = Double.parseDouble(decimalField1.getText().toString());
+        decimalField2.setText(String.valueOf(UnitConverter.unitConversion(amount, unitPosition1, unitPosition2)));
     }
 }

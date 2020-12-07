@@ -9,56 +9,6 @@
     android:orientation="vertical"
     tools:context=".nav_drawer_fragments.HomeFragment">
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/appNameTitleTextView"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="@dimen/title_top_margin"-->
-    <!--        android:layout_marginBottom="@dimen/title_bottom_margin"-->
-    <!--        android:fontFamily="@font/delius_swash_caps"-->
-    <!--        android:text="@string/app_name"-->
-    <!--        android:textAlignment="center"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:textSize="@dimen/title_text_size" />-->
-
-    <!--    <Button-->
-    <!--        android:id="@+id/recipesButton"-->
-    <!--        android:layout_width="@dimen/button_width"-->
-    <!--        android:layout_height="@dimen/button_height"-->
-    <!--        android:layout_gravity="center"-->
-    <!--        android:layout_marginBottom="@dimen/button_bottom_margin"-->
-    <!--        android:fontFamily="@font/actor"-->
-    <!--        android:text="@string/button_recipes"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:textSize="@dimen/button_text_size"-->
-    <!--        android:textStyle="bold"-->
-    <!--        app:cornerRadius="@dimen/button_corner_radius" />-->
-
-    <!--    <Button-->
-    <!--        android:id="@+id/converterButton"-->
-    <!--        android:layout_width="@dimen/button_width"-->
-    <!--        android:layout_height="@dimen/button_height"-->
-    <!--        android:layout_gravity="center"-->
-    <!--        android:layout_marginBottom="@dimen/button_bottom_margin"-->
-    <!--        android:fontFamily="@font/actor"-->
-    <!--        android:text="@string/button_converter"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:textSize="@dimen/button_text_size"-->
-    <!--        android:textStyle="bold"-->
-    <!--        app:cornerRadius="@dimen/button_corner_radius" />-->
-
-    <!--    <Button-->
-    <!--        android:id="@+id/tipsButton"-->
-    <!--        android:layout_width="@dimen/button_width"-->
-    <!--        android:layout_height="@dimen/button_height"-->
-    <!--        android:layout_gravity="center"-->
-    <!--        android:fontFamily="@font/actor"-->
-    <!--        android:text="@string/button_tips"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:textSize="@dimen/button_text_size"-->
-    <!--        android:textStyle="bold"-->
-    <!--        app:cornerRadius="@dimen/button_corner_radius" />-->
-
     <TextView
         android:id="@+id/appNameTitleTextViewBlack"
         android:layout_width="match_parent"
@@ -111,6 +61,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appNameTitleTextViewBlack" />
 
+    <ImageView
+        android:id="@+id/recipeButtonIcon"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="20dp"
+        android:adjustViewBounds="true"
+        android:elevation="@dimen/icon_elevation"
+        android:src="@drawable/ic_fork_knife_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/recipeButton"
+        app:layout_constraintStart_toStartOf="@+id/recipeButton"
+        app:layout_constraintTop_toTopOf="@+id/recipeButton" />
+
     <Button
         android:id="@+id/converterButton"
         android:layout_width="@dimen/button_width"
@@ -127,6 +89,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipeButton" />
 
+    <ImageView
+        android:id="@+id/converterButtonIcon"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="20dp"
+        android:elevation="@dimen/icon_elevation"
+        android:src="@drawable/ruler_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/converterButton"
+        app:layout_constraintStart_toStartOf="@+id/converterButton"
+        app:layout_constraintTop_toTopOf="@+id/converterButton" />
+
     <Button
         android:id="@+id/tipsButton"
         android:layout_width="@dimen/button_width"
@@ -141,6 +114,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/converterButton" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="20dp"
+        android:elevation="@dimen/icon_elevation"
+        android:src="@drawable/light_bulb_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/tipsButton"
+        app:layout_constraintStart_toStartOf="@+id/tipsButton"
+        app:layout_constraintTop_toTopOf="@+id/tipsButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

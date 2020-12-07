@@ -28,4 +28,47 @@
     <string name="contact_email_us">Email Us</string>
     <string name="contact_visit_us">Visit Us</string>
 
+
+    <!--    Recipe Button Text    -->
+    <string name="ingredients_button">Ingredients</string>
+    <string name="instructions_button">Instructions</string>
+
+    <!--    Mass Units Array    -->
+    <string-array name="mass_units">
+        <item>g</item>              <!-- 0 -->
+        <item>teaspoon</item>       <!-- 1 -->
+        <item>tablespoon</item>     <!-- 2 -->
+        <item>oz</item>             <!-- 3 -->
+        <item>lb</item>             <!-- 4 -->
+        <item>kg</item>             <!-- 5 -->
+    </string-array>
+
+    <!--    Volume Units Array    -->
+    <string-array name="volume_units">
+        <item>cup</item>            <!-- 0 -->
+        <item>teaspoon</item>       <!-- 1 -->
+        <item>tablespoon</item>     <!-- 2 -->
+        <item>fl oz</item>          <!-- 3 -->
+        <item>L</item>              <!-- 4 -->
+        <item>ml</item>             <!-- 5 -->
+    </string-array>
+
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.chef101.helper_fragments;
+package com.example.chef101.fragments.recycler_fragments;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.chef101.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link TipsHelperFragment#newInstance} factory method to
+ * Use the {@link IngredientsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TipsHelperFragment extends Fragment {
+public class IngredientsFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class TipsHelperFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public TipsHelperFragment() {
+    public IngredientsFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class TipsHelperFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TipsHelperFragment.
+     * @return A new instance of fragment IngredientsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TipsHelperFragment newInstance(String param1, String param2) {
-        TipsHelperFragment fragment = new TipsHelperFragment();
+    public static IngredientsFragment newInstance(String param1, String param2) {
+        IngredientsFragment fragment = new IngredientsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class TipsHelperFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tips_helper, container, false);
+        return inflater.inflate(R.layout.fragment_ingredients, container, false);
     }
 }

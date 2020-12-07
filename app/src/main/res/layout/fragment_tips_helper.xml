@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".helper_fragments.TipsHelperFragment">
+    tools:context=".fragments.helper_fragments.TipsHelperFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

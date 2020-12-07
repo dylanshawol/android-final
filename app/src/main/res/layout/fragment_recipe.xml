@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".fragments.RecipeFragment">
+
+
+    <TextView
+        android:id="@+id/recipeSelectedNameTextViewBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/recipeSelectedNameTextViewWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="3dp"
+        android:elevation="@dimen/title_white_elevation"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/recipeSelectedNameTextViewBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/recipeImageViewLarge"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="350dp"
+        android:maxHeight="300dp"
+        android:minWidth="350dp"
+        android:minHeight="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeSelectedNameTextViewBlack"
+        tools:src="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/ingredientsButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/button_bottom_margin"
+        android:fontFamily="@font/actor"
+        android:text="@string/ingredients_button"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeImageViewLarge" />
+
+    <Button
+        android:id="@+id/instructionsButton"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/button_bottom_margin"
+        android:fontFamily="@font/actor"
+        android:text="@string/instructions_button"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>
