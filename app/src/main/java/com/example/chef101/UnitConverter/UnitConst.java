@@ -7,6 +7,7 @@ public class UnitConst {
      * order of the string array in string.xml where the integer 1 is the unit itself
      */
 
+    // Create constants for mass
     protected final static double G_IN_TSP = 0.2;
     protected final static double G_IN_TBSP = 0.0782;
     protected final static double G_IN_OZ = 0.0352;
@@ -49,4 +50,7 @@ public class UnitConst {
     protected final static double KG_IN_OZ = 35.274;
     protected final static double KG_IN_LB = 2.204;
     protected final static double[] kilogramsInUnit = {KG_IN_G, KG_IN_TSP, KG_IN_TBSP, KG_IN_OZ, KG_IN_LB, 1};
+
+
+    // TODO: Create constants for volume
 }
