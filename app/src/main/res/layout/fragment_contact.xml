@@ -9,15 +9,19 @@
     tools:context=".nav_drawer_fragments.ContactFragment">
 
     <TextView
-        android:id="@+id/contactTitleTextViewBlack"
+        android:id="@+id/contactTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/title_top_margin"
         android:layout_marginBottom="@dimen/title_bottom_margin"
         android:fontFamily="@font/comfortaa_light"
+        android:shadowColor="@color/black"
+        android:shadowDx="-10"
+        android:shadowDy="10"
+        android:shadowRadius="5"
         android:text="@string/contact_title"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/title_text_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/phoneButton"
@@ -25,25 +29,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <TextView
-        android:id="@+id/contactTitleTextViewWhite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="@dimen/title_top_margin"
-        android:layout_marginBottom="2dp"
-        android:elevation="@dimen/title_white_elevation"
-        android:fontFamily="@font/comfortaa_light"
-        android:text="@string/contact_title"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="@dimen/title_text_size"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/contactTitleTextViewBlack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/phoneButton"
@@ -59,7 +44,7 @@
         app:layout_constraintBottom_toTopOf="@+id/smsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contactTitleTextViewBlack" />
+        app:layout_constraintTop_toBottomOf="@+id/contactTitle" />
 
     <ImageView
         android:id="@+id/phoneIconImage"

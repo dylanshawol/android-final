@@ -19,7 +19,6 @@ import android.widget.TextView;
 
 import com.example.chef101.R;
 import com.example.chef101.pojo.Recipe;
-import com.example.chef101.pojo.RecipesArrayList;
 
 import java.util.ArrayList;
 
@@ -70,7 +69,7 @@ public class RecipeListFragment extends Fragment {
         }
     }
 
-    protected static int listViewPosition;
+    public static int listViewPosition;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,7 +80,7 @@ public class RecipeListFragment extends Fragment {
         ListView recipesListView = view.findViewById(R.id.recipesListView);
 
         // Set the custom adapter to the list view and give it an array list of recipes
-        recipesListView.setAdapter(new CustomRecipesListViewAdapter(getContext(), RecipesArrayList.getRecipesArrayList()));
+        recipesListView.setAdapter(new CustomRecipesListViewAdapter(getContext(), Recipe.getRecipesArrayList()));
 
         // Make the list view position value static and navigate to the recipe fragment
         recipesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -2,16 +2,20 @@ package com.example.chef101.fragments;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.chef101.R;
-import com.example.chef101.pojo.RecipesArrayList;
+import com.example.chef101.pojo.Recipe;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -67,18 +71,45 @@ public class RecipeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_recipe, container, false);
 
+        // Sets the title of the recipe fragment based on what recipe was selected
+        for (int i = 0; i < Recipe.getRecipesArrayList().size(); i++) {
+            // If the selected recipe matches the recipe in the recipe array list
+            if (RecipeListFragment.listViewPosition == i) {
+                // Get the selected recipe's name
+                String recipeName = Recipe.getRecipesArrayList().get(i).getName();
+                // Set the fragment title to the selected recipe's name
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(recipeName);
+            }
+        }
+
+
         // Create image and text views for the recipe fragment
         ImageView recipeImageSelectedImageView = view.findViewById(R.id.recipeImageViewLarge);
         TextView recipeNameSelectedTextViewBlack = view.findViewById(R.id.recipeSelectedNameTextViewBlack);
-        TextView recipeNameSelectedTextViewWhite = view.findViewById(R.id.recipeSelectedNameTextViewWhite);
+
+        Button ingredientsButton = view.findViewById(R.id.ingredientsButton);
+        ingredientsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_recipe_fragment_to_ingredients_fragment);
+            }
+        });
+
+        Button instructionsButton = view.findViewById(R.id.instructionsButton);
+        instructionsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_recipe_fragment_to_instructions_fragment);
+            }
+        });
+
 
         // Get the name and image of the recipe selected from the recipe list view using the recipe array list
-        String recipeNameSelected = RecipesArrayList.getRecipesArrayList().get(RecipeListFragment.listViewPosition).getName();
-        int recipeImageSelected = RecipesArrayList.getRecipesArrayList().get(RecipeListFragment.listViewPosition).getImageOfDish();
+        String recipeNameSelected = Recipe.getRecipesArrayList().get(RecipeListFragment.listViewPosition).getName();
+        int recipeImageSelected = Recipe.getRecipesArrayList().get(RecipeListFragment.listViewPosition).getImageOfDish();
 
         // Set the text and image on the layout to the name and image selected
         recipeNameSelectedTextViewBlack.setText(recipeNameSelected);
-        recipeNameSelectedTextViewWhite.setText(recipeNameSelected);
         recipeImageSelectedImageView.setImageDrawable(getContext().getDrawable(recipeImageSelected));
 
         return view;

@@ -17,8 +17,8 @@
             android:id="@+id/action_nav_home_to_tips_fragment"
             app:destination="@id/tips_fragment" />
         <action
-            android:id="@+id/action_nav_home_to_converter_fragment"
-            app:destination="@id/converter_fragment" />
+            android:id="@+id/action_nav_home_to_chooseConverterFragment"
+            app:destination="@id/nav_choose_converter_fragment" />
     </fragment>
 
     <fragment
@@ -67,5 +67,14 @@
         android:name="com.example.chef101.fragments.recycler_fragments.InstructionsFragment"
         android:label="fragment_instructions"
         tools:layout="@layout/fragment_instructions" />
+    <fragment
+        android:id="@+id/nav_choose_converter_fragment"
+        android:name="com.example.chef101.UnitConverter.ChooseConverterFragment"
+        android:label="Choose a Unit"
+        tools:layout="@layout/fragment_choose_converter">
+        <action
+            android:id="@+id/action_chooseConverterFragment_to_converter_fragment"
+            app:destination="@id/converter_fragment" />
+    </fragment>
 
 </navigation>
