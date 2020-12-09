@@ -69,7 +69,7 @@
         tools:layout="@layout/fragment_instructions" />
     <fragment
         android:id="@+id/nav_choose_converter_fragment"
-        android:name="com.example.chef101.UnitConverter.ChooseConverterFragment"
+        android:name="com.example.chef101.fragments.ChooseConverterFragment"
         android:label="Choose a Unit"
         tools:layout="@layout/fragment_choose_converter">
         <action

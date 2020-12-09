@@ -1,4 +1,4 @@
-package com.example.chef101.UnitConverter;
+package com.example.chef101.fragments;
 
 import android.os.Bundle;
 
@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.chef101.R;
-import com.example.chef101.fragments.ConverterFragment;
 
 /**
  * A simple {@link Fragment} subclass.
