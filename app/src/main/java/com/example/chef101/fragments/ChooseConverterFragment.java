@@ -1,27 +1,23 @@
-package com.example.chef101.fragments.recycler_fragments;
+package com.example.chef101.fragments;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.chef101.R;
-import com.example.chef101.custom_recycler_adapters.CustomIngredientsRecyclerViewAdapter;
-import com.example.chef101.custom_recycler_adapters.CustomIngredientsRecyclerViewAdapter;
-import com.example.chef101.fragments.RecipeListFragment;
-import com.example.chef101.pojo.Ingredients;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link IngredientsFragment#newInstance} factory method to
+ * Use the {@link ChooseConverterFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class IngredientsFragment extends Fragment {
+public class ChooseConverterFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,7 +28,7 @@ public class IngredientsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public IngredientsFragment() {
+    public ChooseConverterFragment() {
         // Required empty public constructor
     }
 
@@ -42,11 +38,11 @@ public class IngredientsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment IngredientsFragment.
+     * @return A new instance of fragment ChooseConverterFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static IngredientsFragment newInstance(String param1, String param2) {
-        IngredientsFragment fragment = new IngredientsFragment();
+    public static ChooseConverterFragment newInstance(String param1, String param2) {
+        ChooseConverterFragment fragment = new ChooseConverterFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,20 +59,28 @@ public class IngredientsFragment extends Fragment {
         }
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_ingredients, container, false);
+        View view = inflater.inflate(R.layout.fragment_choose_converter, container, false);
+        Button massButton = view.findViewById(R.id.massButton);
+        massButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConverterFragment.isMassOrVolume = "mass";
+                Navigation.findNavController(view).navigate(R.id.action_chooseConverterFragment_to_converter_fragment);
+            }
+        });
 
-        RecyclerView recyclerView = view.findViewById(R.id.ingredientsRecyclerView);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        int selectedRecipePosition = RecipeListFragment.listViewPosition;
-
-        recyclerView.setAdapter(new CustomIngredientsRecyclerViewAdapter(Ingredients.getMainIngredientsList().get(selectedRecipePosition)));
+        Button volumeButton = view.findViewById(R.id.volumeButton);
+        volumeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConverterFragment.isMassOrVolume = "volume";
+                Navigation.findNavController(view).navigate(R.id.action_chooseConverterFragment_to_converter_fragment);
+            }
+        });
 
         return view;
     }

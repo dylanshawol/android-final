@@ -1,9 +1,7 @@
 package com.example.chef101.UnitConverter;
 
-
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class Conversions {
     /**
@@ -79,47 +77,42 @@ public class Conversions {
     private static final VolumeUnitConversions cupsConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            // TODO: Add the correct array for the unit
-            return unitConverter(quantity, spinner2Position, UnitConst.gramsInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.cupsInUnit);
         }
     };
 
     private static final VolumeUnitConversions tspVolumeConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            // TODO: Add the correct array for the unit
-            return unitConverter(quantity, spinner2Position, UnitConst.teaspoonsInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.teaspoonsInVolUnit);
         }
     };
 
     private static final VolumeUnitConversions tbspVolumeConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            // TODO: Add the correct array for the unit
-            return unitConverter(quantity, spinner2Position, UnitConst.tablespoonsInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.tablespoonsInVolUnit);
         }
     };
 
     private static final VolumeUnitConversions fluidOuncesConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            // TODO: Add the correct array for the unit
-            return unitConverter(quantity, spinner2Position, UnitConst.ouncesInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.fluidOuncesInUnit);
         }
     };
 
     private static final VolumeUnitConversions litersConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.poundsInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.litersInUnit);
         }
     };
 
     private static final VolumeUnitConversions millilitersConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            // TODO: Add the correct array for the unit
-            return unitConverter(quantity, spinner2Position, UnitConst.kilogramsInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.millilitersInUnit);
         }
     };
 

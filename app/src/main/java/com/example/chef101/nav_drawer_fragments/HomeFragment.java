@@ -2,6 +2,7 @@ package com.example.chef101.nav_drawer_fragments;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
@@ -72,6 +73,7 @@ public class HomeFragment extends Fragment {
         recipeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.recipes_title);
                 Navigation.findNavController(view).navigate(R.id.action_nav_home_to_recipes_fragment);
             }
         });
@@ -79,7 +81,7 @@ public class HomeFragment extends Fragment {
         converterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_nav_home_to_converter_fragment);
+                Navigation.findNavController(view).navigate(R.id.action_nav_home_to_chooseConverterFragment);
             }
         });
         Button tipsButton = view.findViewById(R.id.tipsButton);

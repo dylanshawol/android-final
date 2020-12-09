@@ -10,37 +10,22 @@
     tools:context=".nav_drawer_fragments.HomeFragment">
 
     <TextView
-        android:id="@+id/appNameTitleTextViewBlack"
+        android:id="@+id/appNameTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/title_top_margin"
         android:layout_marginBottom="@dimen/title_bottom_margin"
         android:fontFamily="@font/comfortaa_light"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="@dimen/title_text_size"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/recipeButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/appNameTitleTextViewWhite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="@dimen/title_top_margin"
-        android:layout_marginBottom="2dp"
-        android:elevation="@dimen/title_white_elevation"
-        android:fontFamily="@font/comfortaa_light"
+        android:shadowColor="@color/black"
+        android:shadowDx="-10"
+        android:shadowDy="10"
+        android:shadowRadius="5"
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="@dimen/title_text_size"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/appNameTitleTextViewBlack"
+        app:layout_constraintBottom_toTopOf="@+id/recipeButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -59,7 +44,7 @@
         app:layout_constraintBottom_toTopOf="@+id/converterButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appNameTitleTextViewBlack" />
+        app:layout_constraintTop_toBottomOf="@+id/appNameTitle" />
 
     <ImageView
         android:id="@+id/recipeButtonIcon"

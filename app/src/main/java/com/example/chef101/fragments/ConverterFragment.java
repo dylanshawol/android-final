@@ -3,6 +3,7 @@ package com.example.chef101.fragments;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -93,9 +94,15 @@ public class ConverterFragment extends Fragment {
 
 /*------------------------------ Unit 1 ------------------------------*/
         Spinner unitSpinner1 = view.findViewById(R.id.unitSpinner1);
+        ArrayAdapter<CharSequence> adapter1 = null;
 
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(), R.array.volume_units, android.R.layout.simple_spinner_item);
-
+        if (isMassOrVolume.equals("mass")) {
+            adapter1 = ArrayAdapter.createFromResource(getContext(), R.array.mass_units, android.R.layout.simple_spinner_item);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Mass Converter");
+        } else if (isMassOrVolume.equals("volume")) {
+            adapter1 = ArrayAdapter.createFromResource(getContext(), R.array.volume_units, android.R.layout.simple_spinner_item);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Volume Converter");
+        }
 
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         unitSpinner1.setAdapter(adapter1);

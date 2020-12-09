@@ -16,6 +16,9 @@
     <string name="recipes_title">Recipes</string>
     <string name="converter_title">Converter</string>
     <string name="tips_title">Tips &amp; Tricks</string>
+    <string name="mass_title">Mass</string>
+    <string name="volume_title">Volume</string>
+    <string name="choose_a_unit_title">Choose a Unit</string>
 
     <!--    Home Button Text    -->
     <string name="button_recipes">Recipes</string>
