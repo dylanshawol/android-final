@@ -41,13 +41,13 @@ public class Recipe {
 
     public static ArrayList<Recipe> getRecipesArrayList() {
         ArrayList<Recipe> recipeArrayList = new ArrayList<>();
-        recipeArrayList.add(new Recipe("Pizza Margherita", "30 Min", R.drawable.pizza_margherita));
-        recipeArrayList.add(new Recipe("Brownies","40 Min", R.drawable.brownies));
-        recipeArrayList.add(new Recipe("Fish & Chips", "35 Min",R.drawable.fish_and_chips));
-        recipeArrayList.add(new Recipe("Sourdough Bread","4 Hrs", R.drawable.sourdough_bread));
-        recipeArrayList.add(new Recipe("Dumplings", "25 Min", R.drawable.dumplings));
-        recipeArrayList.add(new Recipe("French Toast", "15 Min", R.drawable.french_toast));
-        recipeArrayList.add(new Recipe("Spaghetti & Meatballs", "30 Min", R.drawable.spaghetti));
+        recipeArrayList.add(new Recipe("Pizza Margherita", "2 Hr 35 Min", R.drawable.pizza_margherita));
+        recipeArrayList.add(new Recipe("Brownies","1 Hr", R.drawable.brownies));
+        recipeArrayList.add(new Recipe("Fish & Chips", "45 Min",R.drawable.fish_and_chips));
+        recipeArrayList.add(new Recipe("Chicken Enchiladas","1 Hr 15 Min", R.drawable.enchiladas));
+        recipeArrayList.add(new Recipe("Pork Dumplings", "50 Min", R.drawable.dumplings));
+        recipeArrayList.add(new Recipe("French Toast", "30 Min", R.drawable.french_toast));
+        recipeArrayList.add(new Recipe("Spaghetti & Meatballs", "1 Hr", R.drawable.spaghetti));
         return recipeArrayList;
     }
 }

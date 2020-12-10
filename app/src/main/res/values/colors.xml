@@ -11,4 +11,7 @@
     <color name="primary_color_variant">#546e7a</color>
     <color name="background_color">#819ca9</color>
 
+    <color name="text_accent_color">#c0fdff</color>
+<!--    <color name="text_accent_color">#00baba</color>-->
+
 </resources>

@@ -19,42 +19,42 @@ public class Conversions {
     private static final MassUnitConversions gramsConversion = new MassUnitConversions() {
         @Override
         public double massConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.gramsInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.gramsToUnit);
         }
     };
 
     private static final MassUnitConversions tspMassConversion = new MassUnitConversions() {
         @Override
         public double massConversion(double quantity, int spinner2Position) {
-              return unitConverter(quantity, spinner2Position, UnitConst.teaspoonsInUnit);
+              return unitConverter(quantity, spinner2Position, UnitConst.teaspoonsToUnit);
         }
     };
 
     private static final MassUnitConversions tbspMassConversion = new MassUnitConversions() {
         @Override
         public double massConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.tablespoonsInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.tablespoonsToUnit);
         }
     };
 
     private static final MassUnitConversions ouncesConversion = new MassUnitConversions() {
         @Override
         public double massConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.ouncesInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.ouncesToUnit);
         }
     };
 
     private static final MassUnitConversions poundsConversion = new MassUnitConversions() {
         @Override
         public double massConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.poundsInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.poundsToUnit);
         }
     };
 
     private static final MassUnitConversions kilosConversion = new MassUnitConversions() {
         @Override
         public double massConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.kilogramsInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.kilogramsToUnit);
         }
     };
 
@@ -77,42 +77,42 @@ public class Conversions {
     private static final VolumeUnitConversions cupsConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.cupsInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.cupsToUnit);
         }
     };
 
     private static final VolumeUnitConversions tspVolumeConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.teaspoonsInVolUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.teaspoonsToVolUnit);
         }
     };
 
     private static final VolumeUnitConversions tbspVolumeConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.tablespoonsInVolUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.tablespoonsToVolUnit);
         }
     };
 
     private static final VolumeUnitConversions fluidOuncesConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.fluidOuncesInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.fluidOuncesToUnit);
         }
     };
 
     private static final VolumeUnitConversions litersConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.litersInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.litersToUnit);
         }
     };
 
     private static final VolumeUnitConversions millilitersConversion = new VolumeUnitConversions() {
         @Override
         public double volumeConversion(double quantity, int spinner2Position) {
-            return unitConverter(quantity, spinner2Position, UnitConst.millilitersInUnit);
+            return unitConverter(quantity, spinner2Position, UnitConst.millilitersToUnit);
         }
     };
 
@@ -128,9 +128,18 @@ public class Conversions {
         return volumeConversionList;
     }
 
-    protected static double unitConverter(double quantity, int spinner2Position, double[] unitsTo) {
+    /**
+     * This method calculates the converted value of what is given
+     * in the first decimal field.
+     *
+     * @param quantity              - quantity that is to be converted
+     * @param secondSpinnerPosition - The position of the second spinner
+     * @param unitsTo               - The list of units and their constants
+     * @return                      - The converted quantity
+     */
+    protected static double unitConverter(double quantity, int secondSpinnerPosition, double[] unitsTo) {
         for (int i = 0; i < unitsTo.length; i++) {
-            if (spinner2Position == i) {
+            if (secondSpinnerPosition == i) {
                 return quantity * unitsTo[i];
             }
         }

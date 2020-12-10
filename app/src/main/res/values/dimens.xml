@@ -38,6 +38,9 @@
     <dimen name="recycler_recipe_time_top_margin">5dp</dimen>
     <dimen name="recycler_recipe_time_left_margin">20dp</dimen>
 
+    <!--    Tips Dimens    -->
+    <dimen name="tips_text_size">32sp</dimen>
+
 
 
 </resources>

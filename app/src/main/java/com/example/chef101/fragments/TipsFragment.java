@@ -2,7 +2,11 @@ package com.example.chef101.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.chef101.R;
+import com.example.chef101.fragments.helper_fragments.TipsHelperFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,7 +70,45 @@ public class TipsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tips, container, false);
 
+        CustomViewPagerAdapter adapter = new CustomViewPagerAdapter(getChildFragmentManager());
+        ViewPager viewPager = view.findViewById(R.id.tipsViewPager);
+        viewPager.setAdapter(adapter);
 
         return view;
+    }
+
+    public static class CustomViewPagerAdapter extends FragmentPagerAdapter {
+        public CustomViewPagerAdapter(@NonNull FragmentManager fm) {
+            super(fm);
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                default:
+                    return TipsHelperFragment.newInstance("tip1");
+                case 1:
+                    return TipsHelperFragment.newInstance("tip2");
+                case 2:
+                    return TipsHelperFragment.newInstance("tip3");
+                case 3:
+                    return TipsHelperFragment.newInstance("tip4");
+                case 4:
+                    return TipsHelperFragment.newInstance("tip5");
+                case 5:
+                    return TipsHelperFragment.newInstance("tip6");
+                case 6:
+                    return TipsHelperFragment.newInstance("tip7");
+                case 7:
+                    return TipsHelperFragment.newInstance("tip8");
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 8;
+        }
     }
 }

@@ -1,12 +1,16 @@
 package com.example.chef101.nav_drawer_fragments;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +24,7 @@ import com.example.chef101.R;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,10 +71,19 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+//        final String fontSize = preferences.getString("font_size", "20");
+
+//        Log.d("ABCDEF", fontSize);
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         fm = getActivity().getSupportFragmentManager();
         Button recipeButton = view.findViewById(R.id.recipeButton);
+
+//        recipeButton.setTextSize(fontSize);
+
         recipeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

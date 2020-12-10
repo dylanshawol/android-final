@@ -76,12 +76,11 @@ public class ConverterFragment extends Fragment {
         }
     }
 
-
-    public int unitPosition1;
-    public int unitPosition2;
+    public int firstSpinnerPosition;
+    public int secondSpinnerPosition;
     public double amount;
-    public EditText decimalField1;
-    public EditText decimalField2;
+    public EditText firstDecimalField;
+    public EditText secondDecimalField;
     public static String isMassOrVolume = "mass";
 
 
@@ -92,10 +91,11 @@ public class ConverterFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_converter, container, false);
 
 
-/*------------------------------ Unit 1 ------------------------------*/
+/*------------------------------ First Spinner and Decimal Field ------------------------------*/
         Spinner unitSpinner1 = view.findViewById(R.id.unitSpinner1);
         ArrayAdapter<CharSequence> adapter1 = null;
 
+        // Set the navigation title and the spinner adapter based on weather mass or volume was clicked
         if (isMassOrVolume.equals("mass")) {
             adapter1 = ArrayAdapter.createFromResource(getContext(), R.array.mass_units, android.R.layout.simple_spinner_item);
             ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Mass Converter");
@@ -104,20 +104,25 @@ public class ConverterFragment extends Fragment {
             ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Volume Converter");
         }
 
+        // Set the adapter's layout
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Set adapter to the spinner
         unitSpinner1.setAdapter(adapter1);
 
+        // Create the decimal fields for the input
+        firstDecimalField = view.findViewById(R.id.unitTextField1);
+        secondDecimalField = view.findViewById(R.id.unitTextField2);
 
-        decimalField1 = view.findViewById(R.id.unitTextField1);
-        decimalField2 = view.findViewById(R.id.unitTextField2);
 
-
-        decimalField1.addTextChangedListener(new TextWatcher() {
+        firstDecimalField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {convertOnChanged();}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // When input is typed into the first decimal field convert what's in it
+                convertOnChanged();
+            }
 
             @Override
             public void afterTextChanged(Editable s) {}
@@ -126,21 +131,25 @@ public class ConverterFragment extends Fragment {
         unitSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                unitPosition1 = position;
+                // When a unit is selected from the spinner assign the position of the item to firstSpinnerPosition
+                // and convert what's in the decimal field
+                firstSpinnerPosition = position;
                 convertOnChanged();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
-/*------------------------------ Unit 2 ------------------------------*/
+/*------------------------------ Second Spinner and Decimal Field ------------------------------*/
         Spinner unitSpinner2 = view.findViewById(R.id.unitSpinner2);
         unitSpinner2.setAdapter(adapter1);
 
         unitSpinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                unitPosition2 = position;
+                // When a unit is selected from the spinner assign the position of the item to unitPosition1
+                // and convert what's in the first decimal field
+                secondSpinnerPosition = position;
                 convertOnChanged();
             }
 
@@ -159,11 +168,11 @@ public class ConverterFragment extends Fragment {
      * @author Dylan Shawol
      */
     public void convertOnChanged() {
-        if (!decimalField1.getText().toString().equals("")) {
-            amount = Double.parseDouble(decimalField1.getText().toString());
-            decimalField2.setText(String.valueOf(UnitConverter.spinnerConversion(amount, unitPosition1, unitPosition2)));
+        if (!firstDecimalField.getText().toString().equals("")) {
+            amount = Double.parseDouble(firstDecimalField.getText().toString());
+            secondDecimalField.setText(String.valueOf(UnitConverter.convertBySpinner(amount, firstSpinnerPosition, secondSpinnerPosition)));
         } else {
-            decimalField2.setText("");
+            secondDecimalField.setText("");
         }
     }
 }
