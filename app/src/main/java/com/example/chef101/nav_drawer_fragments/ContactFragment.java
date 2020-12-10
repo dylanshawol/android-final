@@ -1,5 +1,7 @@
 package com.example.chef101.nav_drawer_fragments;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +9,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.chef101.R;
+import com.example.chef101.pojo.Ingredients;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +66,94 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        View view = inflater.inflate(R.layout.fragment_contact, container, false);
+
+        // Call
+        Button callButton = view.findViewById(R.id.phoneButton);
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create a Uri Object that will hold a phone number
+                Uri phoneNumber = Uri.parse("tel: 5195195195");
+
+                // Create an Intent Object that will preform the Dial Action using the phone number
+                Intent intent = new Intent(Intent.ACTION_DIAL, phoneNumber);
+
+                // Check if the user's device has a default phone client
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    // Start the intent
+                    startActivity(intent);
+                } else {
+                    // Otherwise display an error message
+                    Toast.makeText(getContext(), "No Phone Client Detected", Toast.LENGTH_SHORT);
+                }
+            }
+        });
+
+        // Text
+        Button smsButton = view.findViewById(R.id.smsButton);
+        smsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent Object that will preform the Send To action using the phone number
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("smsto: 5195195195"));
+
+                // Check if the user's device has a default SMS client
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    // Start the intent
+                    startActivity(intent);
+                } else {
+                    // Otherwise display an error message
+                    Toast.makeText(getContext(), "No SMS Client Detected", Toast.LENGTH_SHORT);
+                }
+            }
+        });
+
+        // Email
+        Button emailButton = view.findViewById(R.id.emailButton);
+        emailButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create a String Array of email addresses and add relevant email(s)
+                String[] developerEmailAddresses = {"dylan.shawol01@stclairconnect.ca"};
+
+                // Create an Intent Object that will preform the Send To action using the email address Array
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto: " + developerEmailAddresses[0]));
+
+                // Check if the user's device has a default email client
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    // Start the intent
+                    startActivity(intent);
+                } else {
+                    // Otherwise display an error message
+                    Toast.makeText(getContext(), "No Email Client Detected", Toast.LENGTH_SHORT);
+                }
+            }
+        });
+
+        // Location
+        Button mapButton = view.findViewById(R.id.visitButton);
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent Object that will preform the View Action using the coordinates
+                Uri headQuarters = Uri.parse("geo:0,0?q=St. Clair College - Windsor Campus");
+//                Uri headQuarters = Uri.parse("geo:42.2464, -83.0182");
+                Intent intent = new Intent(Intent.ACTION_VIEW, headQuarters);
+
+                // Check if the user's device has a default map client
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    // Start the intent
+                    startActivity(intent);
+                } else {
+                    // Otherwise display an error message
+                    Toast.makeText(getContext(), "No Map Client Detected", Toast.LENGTH_SHORT);
+                }
+            }
+        });
+
+        return view;
     }
 }

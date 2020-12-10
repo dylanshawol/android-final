@@ -26,6 +26,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/icon_left_margin"
+        android:adjustViewBounds="true"
+        android:elevation="@dimen/icon_elevation"
+        android:src="@drawable/mass_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/massButton"
+        app:layout_constraintStart_toStartOf="@+id/massButton"
+        app:layout_constraintTop_toTopOf="@+id/massButton" />
+
     <Button
         android:id="@+id/massButton"
         android:layout_width="@dimen/button_width"
@@ -40,6 +52,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chooseUnitTitle" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/icon_left_margin"
+        android:adjustViewBounds="true"
+        android:elevation="@dimen/icon_elevation"
+        android:src="@drawable/volume_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeButton"
+        app:layout_constraintStart_toStartOf="@+id/volumeButton"
+        app:layout_constraintTop_toTopOf="@+id/volumeButton" />
 
     <Button
         android:id="@+id/volumeButton"

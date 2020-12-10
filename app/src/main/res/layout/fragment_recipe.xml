@@ -42,6 +42,17 @@
         app:layout_constraintTop_toBottomOf="@+id/recipeSelectedNameTextViewBlack"
         tools:src="@tools:sample/avatars" />
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/icon_left_margin"
+        android:elevation="@dimen/icon_elevation"
+        android:src="@drawable/ingredients_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/ingredientsButton"
+        app:layout_constraintStart_toStartOf="@+id/ingredientsButton"
+        app:layout_constraintTop_toTopOf="@+id/ingredientsButton" />
+
     <Button
         android:id="@+id/ingredientsButton"
         android:layout_width="@dimen/button_width"
@@ -56,6 +67,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipeImageViewLarge" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/icon_left_margin"
+        android:elevation="@dimen/icon_elevation"
+        android:src="@drawable/instructions_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/instructionsButton"
+        app:layout_constraintStart_toStartOf="@+id/instructionsButton"
+        app:layout_constraintTop_toTopOf="@+id/instructionsButton" />
 
     <Button
         android:id="@+id/instructionsButton"

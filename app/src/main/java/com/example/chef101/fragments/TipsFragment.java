@@ -88,21 +88,21 @@ public class TipsFragment extends Fragment {
             switch (position) {
                 case 0:
                 default:
-                    return TipsHelperFragment.newInstance("tip1");
+                    return TipsHelperFragment.newInstance("Control your heat. Don't let the pan become too hot or not hot enough.");
                 case 1:
-                    return TipsHelperFragment.newInstance("tip2");
+                    return TipsHelperFragment.newInstance("Chop with the rear part of the blade, not the tip, in a rolling motion.");
                 case 2:
-                    return TipsHelperFragment.newInstance("tip3");
+                    return TipsHelperFragment.newInstance("Don't overcrowd the pan. There won't be enough heat or direct contact to brown or crisp whatever you're cooking.");
                 case 3:
-                    return TipsHelperFragment.newInstance("tip4");
+                    return TipsHelperFragment.newInstance("A dull knife is more dangerous than a sharp knife. Dull blades may cause slippage or may require you to cut with more pressure both of which can lead to injury.");
                 case 4:
-                    return TipsHelperFragment.newInstance("tip5");
+                    return TipsHelperFragment.newInstance("A falling knife has no handle. If a knife happens to fall to the ground do not try to catch it, step back as quickly as possible.");
                 case 5:
-                    return TipsHelperFragment.newInstance("tip6");
+                    return TipsHelperFragment.newInstance("Always taste your food while cooking, even if you are serving it to someone else. This can help you make adjustments on seasonings and cook time.");
                 case 6:
-                    return TipsHelperFragment.newInstance("tip7");
+                    return TipsHelperFragment.newInstance("Clean as you go. A clean workspace will increase your efficiency in the kitchen.");
                 case 7:
-                    return TipsHelperFragment.newInstance("tip8");
+                    return TipsHelperFragment.newInstance("Be creative with recipes. When following recipes feel encouraged to \"spice\" things up by adding ingredients or doing things in a different way. If it sounds good to you then try it!");
             }
         }
 
