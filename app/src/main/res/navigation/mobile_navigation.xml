@@ -107,7 +107,7 @@
     <fragment
         android:id="@+id/nav_credits"
         android:name="com.example.chef101.fragments.CreditsFragment"
-        android:label="fragment_credits"
+        android:label="@string/menu_credits"
         tools:layout="@layout/fragment_credits" />
 
 </navigation>
