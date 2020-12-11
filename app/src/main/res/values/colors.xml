@@ -8,6 +8,7 @@
 
 
     <color name="primary_color">#29434e</color>
+    <color name="primary_color_dark">#416170</color>
     <color name="primary_color_variant">#546e7a</color>
     <color name="background_color">#819ca9</color>
 

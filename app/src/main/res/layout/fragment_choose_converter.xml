@@ -42,7 +42,7 @@
         android:id="@+id/massButton"
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
-        android:layout_marginTop="@dimen/title_bottom_margin"
+        android:layout_marginTop="75dp"
         android:fontFamily="@font/actor"
         android:text="@string/mass_title"
         android:textAllCaps="false"

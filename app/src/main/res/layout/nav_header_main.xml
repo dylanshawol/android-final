@@ -16,8 +16,10 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:translationY="10dp"
         app:srcCompat="@mipmap/chef101_icon_round" />
 
     <TextView
