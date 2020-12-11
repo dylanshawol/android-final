@@ -6,10 +6,10 @@ Chef 101 is an informative app that can teach just about anyone how to cook qual
 ![Recipes](https://i.imgur.com/We5zrb5.png) 
 ![Unit Converter](https://i.imgur.com/R0btW9k.png) 
 
-![Homescreen](https://i.imgur.com/eq2DfVu.jpeg) '![Tips ViewPager](https://i.imgur.com/gPmy2cC.gif)
+![Homescreen](https://i.imgur.com/eq2DfVu.jpeg) '![Tips View Pager](https://i.imgur.com/gPmy2cC.gif)
 
 ## Author
 **Dylan Shawol**
 
 ## License 
-None!
+None! 
