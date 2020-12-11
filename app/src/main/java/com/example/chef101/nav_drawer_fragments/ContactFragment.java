@@ -154,6 +154,27 @@ public class ContactFragment extends Fragment {
             }
         });
 
+        // Location
+        Button intentButton = view.findViewById(R.id.visitButton);
+        intentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent Object that will preform the View Action using the coordinates
+                Uri headQuarters = Uri.parse("geo:0,0?q=St. Clair College - Windsor Campus");
+//                Uri headQuarters = Uri.parse("geo:42.2464, -83.0182");
+                Intent intent = new Intent(Intent.ACTION_VIEW, headQuarters);
+
+                // Check if the user's device has a default map client
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    // Start the intent
+                    startActivity(intent);
+                } else {
+                    // Otherwise display an error message
+                    Toast.makeText(getContext(), "No Map Client Detected", Toast.LENGTH_SHORT);
+                }
+            }
+        });
+
         return view;
     }
 }

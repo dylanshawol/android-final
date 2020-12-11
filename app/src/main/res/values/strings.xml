@@ -7,6 +7,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!--    Author Info    -->
+    <string name="author_name">Dylan Shawol</string>
+    <string name="author_email">dylan.shawol01@stclairconnect.ca</string>
+
     <!--    Menu Headers-->
     <string name="menu_home">Home</string>
     <string name="menu_contact">Contact</string>
@@ -35,6 +39,9 @@
     <!--    Recipe Button Text    -->
     <string name="ingredients_button">Ingredients</string>
     <string name="instructions_button">Instructions</string>
+
+    <!--    Timer Button    -->
+    <string name="timer_button_text">Set Timer</string>
 
     <!--    Mass Units Array    -->
     <string-array name="mass_units">

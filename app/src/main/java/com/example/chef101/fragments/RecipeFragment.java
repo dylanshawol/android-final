@@ -1,5 +1,7 @@
 package com.example.chef101.fragments;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.chef101.R;
 import com.example.chef101.pojo.Recipe;
@@ -102,7 +105,6 @@ public class RecipeFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_recipe_fragment_to_instructions_fragment);
             }
         });
-
 
         // Get the name and image of the recipe selected from the recipe list view using the recipe array list
         String recipeNameSelected = Recipe.getRecipesArrayList().get(RecipeListFragment.listViewPosition).getName();

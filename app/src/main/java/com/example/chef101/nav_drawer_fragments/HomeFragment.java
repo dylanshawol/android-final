@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-//        final String fontSize = preferences.getString("font_size", "20");
+        final String fontSize = preferences.getString("font_size", "20");
 
 //        Log.d("ABCDEF", fontSize);
 

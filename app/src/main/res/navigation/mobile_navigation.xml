@@ -48,7 +48,7 @@
     <fragment
         android:id="@+id/recipe_fragment"
         android:name="com.example.chef101.fragments.RecipeFragment"
-        android:label="fragment_recipe"
+        android:label=""
         tools:layout="@layout/fragment_recipe" >
         <action
             android:id="@+id/action_recipe_fragment_to_ingredients_fragment"
@@ -60,12 +60,12 @@
     <fragment
         android:id="@+id/ingredients_fragment"
         android:name="com.example.chef101.fragments.recycler_fragments.IngredientsFragment"
-        android:label="fragment_ingredients"
+        android:label="Ingredients"
         tools:layout="@layout/fragment_ingredients" />
     <fragment
         android:id="@+id/instructions_fragment"
         android:name="com.example.chef101.fragments.recycler_fragments.InstructionsFragment"
-        android:label="fragment_instructions"
+        android:label="Instructions"
         tools:layout="@layout/fragment_instructions" />
     <fragment
         android:id="@+id/nav_choose_converter_fragment"
